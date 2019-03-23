@@ -1,0 +1,15 @@
+X.	-- Decide on the type of game.
+X.	-- List must haves/ wants/ extras if time
+3.	Flow chart an example game
+4.	Create milestone list / progress tracker / include reducing scope checkpoints
+5.	Create peer testing calender to speed error checking
+
+1.	Stephen: Dungeon Crawler, No lvl progression, one weapon, one mob, for the time being.
+2.	Kevin: 
+		Must Haves: 	Basic 8-bit style graphics, simple story, clear victory conditions, key mapping (space, arrows) for (action, move),
+				title screen, credits crawler, help menu
+		Wants: 		At least 5 different mobs, at least 5 different weapons, armor, random encounters, potions, 
+				multi-level map, multi-lvl stats for player and mobs, inventory page, mini map
+		Extras: 	Sound, Sell inventory or buy from npc shop, mob drops, fully random stat 10+ weapons/ mobs/ encounters, 
+				multiple armor pieces, tiered mobs, fleshed out story, high scores, executable .jar file, "infinite dungeon",
+				cheat codes (might need these for testing anyway)

@@ -1,0 +1,15 @@
+1.	Dungeon Crawler Example.  (Learn Packages, Buttons, Sounds)
+	https://www.youtube.com/watch?v=J3t1h6HJIKA
+
+2.	Collision geometries for side scroller
+	https://www.youtube.com/watch?v=oJvJZNyW_rw
+
+3.	Flappy bird side scroller and window
+	https://www.youtube.com/watch?v=I1qTZaUcFX0
+
+4.	Game Dev Game Loop, used this for dots (extends, implements, start, run, stop etc.)
+	https://www.youtube.com/watch?v=1gir2R7G9ws&t=1044s
+
+Resources:
+https://www.geeksforgeeks.org/java/
+https://www.w3schools.com/java/default.asp
