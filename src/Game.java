@@ -94,14 +94,14 @@ public class Game extends Canvas implements Runnable {
             this.createBufferStrategy(3);
             return;
         }
-        Graphics g = buffStrat.getDrawGraphics();
-
-        g.setColor(Color.black);
-        g.fillRect(0, 0, width, height);
-
-        //handler.render(g);
-        g.dispose();
-        buffStrat.show();
+//        Graphics g = buffStrat.getDrawGraphics();
+//
+//        g.setColor(Color.black);
+//        g.fillRect(0, 0, width, height);
+//
+//        //handler.render(g);
+//        g.dispose();
+//        buffStrat.show();
     }
     public static void main(String [] args)
     {
