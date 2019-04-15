@@ -1,23 +1,18 @@
-public class Monster
+public abstract class Monster
 {
 
     String strName;
-    int intHealth, intAtkPower, intWeapon, intArmor, intLevel, intEXP, intSetLevel;
+    int intCurrentHealth, intMaxHealth, intAtkPower, intLevel, intEXP;
 
 
-    public Monster(String name_, int health_, int atkPower_, int weapon_, int armor_, int level_, int exp_)
+    public Monster(String name_)
     {
     this.strName = name_;
-    this.intHealth = health_;
-    this.intAtkPower = atkPower_;
-    this.intWeapon = weapon_;
-    this.intArmor = armor_;
-    this.intEXP = exp_;
     }
 
     public Monster()
     {
-    this("Potted Plant", 10, 1, 0, 0, 1, 100);
+    this("Potted Plant");
     }
 
     public String MonsterName()
@@ -25,24 +20,16 @@ public class Monster
         return strName;
     }
 
-    public int MonsterHealth()
+    public int MaxHealth() {return intMaxHealth; }
+
+    public int CurrentHealth()
     {
-        return intHealth;
+        return intCurrentHealth;
     }
 
     public int AtkPower()
     {
         return intAtkPower;
-    }
-
-    public int WeaponDamage()
-    {
-        return intWeapon;
-    }
-
-    public int AmtArmor()
-    {
-        return intArmor;
     }
 
     public int getLevel()
@@ -57,7 +44,7 @@ public class Monster
 
     public void ChangeMonsterHealth(int intHealthChange_)
     {
-        this.intHealth += intHealthChange_;
+        this.intCurrentHealth += intHealthChange_;
     }
 
     public void ChangeAtkDamage(int intAtkChange_)
