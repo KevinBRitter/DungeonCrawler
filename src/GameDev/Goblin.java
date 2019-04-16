@@ -44,7 +44,7 @@ public class Goblin extends Monster
     void SetLevel(int level_)
     {
         // Abstract method sets current level
-        this.intCurrentLevel = level_;
+        this.intLevel = level_;
     }
     void TakeDamage(int damage_)
     {
@@ -65,17 +65,21 @@ public class Goblin extends Monster
     {
         // Abstract method player only, for mobs does nothing
     }
+    void UpdateLvl()
+    {
+        // Abstract method player only, for mobs does nothing
+    }
     private void addArmour()
     {
         // Armour defaults to zero
         int tempNum = 0;
-        if(this.intCurrentLevel > 20)
+        if(this.intLevel > 20)
         {
             // If GameDev.Goblin level is greater than 20
             // Pick a random number between 11 and 20
             tempNum = randNum.nextInt(10) + 11;
         }
-        else if(this.intCurrentLevel > 10)
+        else if(this.intLevel > 10)
         {
             // Else if GameDev.Goblin level is between 10 and 20
             // Pick a random number between 1 and 10
@@ -90,13 +94,13 @@ public class Goblin extends Monster
     {
         // Attack defaults to five
         int tempNum = 5;
-        if(this.intCurrentLevel > 20)
+        if(this.intLevel > 20)
         {
             // If GameDev.Goblin level is greater than 20
             // Pick a random number between 11 and 20
             tempNum = randNum.nextInt(10) + 11;
         }
-        else if(this.intCurrentLevel > 10)
+        else if(this.intLevel > 10)
         {
             // Else if GameDev.Goblin level is between 10 and 20
             // Pick a random number between 1 and 10

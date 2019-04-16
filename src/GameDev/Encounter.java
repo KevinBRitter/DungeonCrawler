@@ -20,10 +20,20 @@ public class Encounter {
         else
             return true;
     }
-    public void UpdateEXP(Monster player, Monster mob)
+    public void UpdateStatus(Monster player, Monster mob)
+    {
+        UpdateEXP(player, mob);
+        UpdateLvl(player);
+    }
+    private void UpdateEXP(Monster player, Monster mob)
     {
         // Raises the player experience by the monster's experience value
         player.RaiseEXP(mob.GetEXP());
+    }
+    private void UpdateLvl(Monster player)
+    {
+        // Checks if a level update is warranted and implements it
+        player.UpdateLvl();
     }
 
 }
