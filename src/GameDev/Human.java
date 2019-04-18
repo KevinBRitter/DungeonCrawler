@@ -1,11 +1,11 @@
 package GameDev;
 
-public class Player extends Monster {
+public class Human extends Monster {
 
-    public Player(String name_)
+    public Human(String name_)
     {
         super(name_);
-        this.intCurrentLevel = 1;
+        this.intLevel = 1;
         this.intEXP = 0;
     }
     String MonsterName()
@@ -57,6 +57,15 @@ public class Player extends Monster {
     {
         // Abstract method increases the total experience points
         this.intEXP += mobEXP;
+    }
+    void UpdateLvl()
+    {
+        // Abstract method checks total experience and updates player level
+        int tempExp = this.intLevel * 100;
+        if(this.intEXP > tempExp)
+        {
+            this.intLevel++;
+        }
     }
 
 //    public int EXPTarget() {intEXPTarget = intLevel * 100; return intEXPTarget; }

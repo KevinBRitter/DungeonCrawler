@@ -6,7 +6,7 @@ public abstract class Monster
 {
     // Attribute Declarations
     String strName;
-    int intCurrentHealth, intMaxHealth, intAttackPower, intLevel, intEXP, intCurrentLevel, intArmor;
+    int intCurrentHealth, intMaxHealth, intAttackPower, intLevel, intEXP, intArmor;
     boolean isDead = false;
     Random randNum;
 
@@ -17,7 +17,7 @@ public abstract class Monster
 
     public Monster()
     {
-    this("Potted Plant");
+        this("Unknown Terror");
     }
 
     abstract String MonsterName();
@@ -29,6 +29,7 @@ public abstract class Monster
     abstract void TakeDamage(int damage_);
     abstract int GetEXP();
     abstract void RaiseEXP(int mobEXP_);
+    abstract void UpdateLvl();
 
 //    public void ChangeMonsterHealth(int intHealthChange_)
 //    {
