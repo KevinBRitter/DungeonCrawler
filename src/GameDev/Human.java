@@ -7,6 +7,9 @@ public class Human extends Monster {
         super(name_);
         this.intLevel = 1;
         this.intEXP = 0;
+        this.intCurrentHealth = 20;
+        this.intMaxHealth = 30;
+        this.intAttackPower = 20;
     }
     String MonsterName()
     {
