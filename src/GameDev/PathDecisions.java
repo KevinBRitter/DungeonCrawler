@@ -8,6 +8,9 @@ public class PathDecisions
     // for selecting the next door to go through
     // Attributes
     int prevRoomNum, currentRoomNum, playerChoice;
+    int room1BodyCount = 0, room2BodyCount = 0, room3BodyCount = 0, room4BodyCount = 0,
+            room5BodyCount = 0, room6BodyCount = 0, room7BodyCount = 0, room8BodyCount = 0;
+    int swordvisit = 0;
     Scanner choiceIn;
     public PathDecisions()
     {}
@@ -21,6 +24,7 @@ public class PathDecisions
         // rooms 2 and 8 are dead ends
         if (prevRoom == 7)
         {
+
             // You are in room 4, choices of 3, 5, or back to 7
             System.out.println("Ok, there's options.  Should you go right or left?");
             System.out.println("You can go back too, but that's a dead end right?");
@@ -182,5 +186,173 @@ public class PathDecisions
         } while( !valid );
         // Send only valid choices back to be used
         return choice;
+    }
+
+    public void roomIntro(int currentRoomNum)
+    {
+        if(currentRoomNum == 1)
+        {
+            if(room1BodyCount == 0)
+            {
+                System.out.println("Oh good lord. The exit... or at least, you assume it to be an exit. Unlike the large \n" +
+                        " variety of mundane wooden doors that had blocked several entrances before this point, you can see \n" +
+                        "that this one has several gleaming locks, each apparently needing to have a key stuffed into them \n" +
+                        "before escape is possible. You need to find those keys - three of them.");
+            }
+            else if(room1BodyCount == 1)
+            {
+                System.out.println("You nearly stumble across the goblinoid body that lay dead on the floor in front of the door. \n" +
+                        "The room's door still gleams mockingly, taunting you with potential freedom.");
+            }
+            else if(room1BodyCount >= 2)
+            {
+                System.out.println("Freedom beckons, albeit one tainted by the blood of the countless creatures you've slain");
+            }
+            room1BodyCount++;
+        }
+        else if(currentRoomNum == 2) {
+            if (room2BodyCount == 0) {
+                System.out.println("You enter... a dead-end. Just like the other rooms, this one has the same stone floor, \n" +
+                        "stone walls, perpetually burning torches. There also seems to be a monster running at you!");
+            } else if (room2BodyCount == 1) {
+                System.out.println("The room lies unchanged before you - same walls, same torch, same body on the ground.");
+            } else if (room2BodyCount >= 2 && room2BodyCount < 6) {
+                System.out.println("The room lies unchanged before you - same walls, same torch, same bodies on the ground.");
+            } else if (room2BodyCount >= 6) {
+                System.out.println("You've been through this room just a time or two before. You can tell from the pile \n" +
+                        "of bodies that had already started stinking, you full-fledged psychopath.");
+            }
+            room2BodyCount++;
+        }
+        else if(currentRoomNum == 3)
+        {
+            if (room3BodyCount == 0) {
+                System.out.println("You enter another room, just like the other rooms, this one has the same stone floor, \n" +
+                        "stone walls, perpetually burning torches. There also seems to be a monster running at you!");
+            } else if (room3BodyCount == 1) {
+                System.out.println("The room lies unchanged before you - same walls, same torch, same body on the ground.");
+            } else if (room3BodyCount >= 2 && room3BodyCount < 6) {
+                System.out.println("The room lies unchanged before you - same walls, same torch, same bodies on the ground.");
+            } else if (room3BodyCount >= 6) {
+                System.out.println("You've been through this room just a time or two before. You can tell from the pile \n" +
+                        "of bodies that had already started stinking, you full-fledged psychopath.");
+            }
+            room3BodyCount++;
+        }
+        else if(currentRoomNum == 4)
+        {
+            if(room4BodyCount == 0) {
+                System.out.println("Your fingers wrapped around the cold metal of the handle, and you slowly turned it, only \n" +
+                        " to then draw out. The loud screech of tormented metal following your tug greeted your ears, \n" +
+                        " and you saw with shock that a midget – not just a midget, but a green one with a large nose! \n" +
+                        "- stared at you with shock, before jabbering in a high-pitched voice. The little creature even \n" +
+                        "hopped up and down, before tugging a knife out that was as well-maintained as the door you’d just \n" +
+                        "walked through… that is, not at all. With a gleeful grin, the little mad-cap darted towards you,  \n" +
+                        "clearly eager to fight.");
+            }
+            else if(room4BodyCount == 1)
+            {
+                System.out.println("The room lies unchanged before you - same walls, same torch, same body on the ground.");
+            }
+            else if (room4BodyCount >= 2 && room4BodyCount < 6)
+            {
+                System.out.println("The room lies unchanged before you - same walls, same torch, same bodies on the ground.");
+            }
+            else if(room4BodyCount >= 6)
+            {
+                System.out.println("You've been through this room just a time or two before. You can tell from the pile \n" +
+                        "of bodies that had already started stinking, you full-fledged psychopath.");
+            }
+            room4BodyCount++;
+        }
+        else if(currentRoomNum == 5)
+        {
+            if (room5BodyCount == 0) {
+                System.out.println("You enter another room. Just like the other rooms, this one has the same stone floor, \n" +
+                        "stone walls, perpetually burning torches. There also seems to be a monster running at you!");
+            } else if (room5BodyCount == 1) {
+                System.out.println("The room lies unchanged before you - same walls, same torch, same body on the ground.");
+            } else if (room5BodyCount >= 2 && room5BodyCount < 6) {
+                System.out.println("The room lies unchanged before you - same walls, same torch, same bodies on the ground.");
+            } else if (room5BodyCount >= 6) {
+                System.out.println("You've been through this room just a time or two before. You can tell from the pile \n" +
+                        "of bodies that had already started stinking, you full-fledged psychopath.");
+            }
+            room2BodyCount++;
+        }
+        else if(currentRoomNum == 6)
+        {
+            if(swordvisit == 0)
+            {
+                System.out.println("You proceeded down another hallway… and see in the very center of this room, a sword in the stone. \n" +
+                        " Stepping forward, your heart fluttered as you read the familiar epithet that was so often spoken of in \n" +
+                        "regards to King Arthur: “Who-so-ever removes the sword from the stone, shall be the true king (or queen?) of \n" +
+                        "Britain.” Were you the chosen one? One of your hands moved to grip the handle of the blade, and you tugged. \n" +
+                        "And tugged again. Third time’s the charm? Another tug, another nope. Guess you’re not meant to be the true ruler \n" +
+                        "of Britain. Probably for the best, considering the mess going on with Brexit. You do however find another blade, \n" +
+                        "much rustier, on the ground, and pick it up.");
+
+            }
+            else if(swordvisit == 1)
+            {
+                System.out.println("The rusty color that had previously adorned the blade is gone. It looks as though the \n" +
+                        "blade had just been polished. Weird.");
+            }
+            else if(swordvisit == 2)
+            {
+                System.out.println("Unlike the rest of the castle, this room has a pleasantly warm feel to it. How relaxing. ");
+            }
+            else if(swordvisit == 3)
+            {
+                System.out.println("Alright, now you either know you're going crazy, or else something really strange is happening \n" +
+                        "here. Water pours from the ceiling like a miniature waterfall, highlighting the blade.");
+            }
+            else if(swordvisit == 4)
+            {
+                System.out.println("The waterfall from last time now has a freaking rainbow mocking you now, curved around the sword. \n" +
+                        "Whatever magic the sword has clearly enjoys taunting you.");
+            }
+            else if(swordvisit >= 5)
+            {
+                System.out.println("The sword now is brilliantly illuminated by what seemed like an invisible spotlight! The rainbow \n" +
+                        "persists, brighter than ever");
+            }
+            swordvisit++;
+        }
+        else if(currentRoomNum == 7)
+        {
+            if(room7BodyCount == 0)
+            {
+                System.out.println("You re-enter the room you originally woke up in. There's a puddle of vomit on the floor \n" +
+                        "that you don't *quite* remember leaving, but could absolutely believe came from you. The horrid smell \n" +
+                        "that puddle aside, there's another enemy laying in wait for you!");
+            }
+            if(room7BodyCount == 1)
+            {
+                System.out.println("Point Zero: your original bedroom in this place. The goblin you'd killed earlier covers up \n" +
+                        "the chunky salsa you'd hurled earlier. Aside from that, just another angry monster charging at you.");
+            }
+            if(room7BodyCount > 1)
+            {
+                System.out.println("The bodies are stacking up in here. The already atrocious smell is getting even worse. \n" +
+                        "You really need to get out of it sooner rather than later.");
+            }
+
+        }
+        else if(currentRoomNum == 8)
+        {
+            if (room8BodyCount == 0) {
+                System.out.println("You enter... a dead-end. Just like the other rooms, this one has the same stone floor, \n" +
+                        "stone walls, perpetually burning torches. There also seems to be a monster running at you!");
+            } else if (room8BodyCount == 1) {
+                System.out.println("The room lies unchanged before you - same walls, same torch, same body on the ground.");
+            } else if (room8BodyCount >= 2 && room8BodyCount < 6) {
+                System.out.println("The room lies unchanged before you - same walls, same torch, same bodies on the ground.");
+            } else if (room8BodyCount >= 6) {
+                System.out.println("You've been through this room just a time or two before. You can tell from the pile \n" +
+                        "of bodies that had already started stinking, you full-fledged psychopath.");
+            }
+            room8BodyCount++;
+        }
     }
 }
