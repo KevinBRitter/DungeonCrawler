@@ -1,20 +1,25 @@
 package GameDev;
 
+import java.util.Random;
+
 public class Goblin extends Monster
 {
     public Goblin(String name_, int level_) {
         super(name_);
+        randNum = new Random();
         this.strName = name_;
         this.intCurrentHealth = 20*level_;
         this.intMaxHealth = 20*level_;
         addArmour();
         addAttackPwr();
+        rollForKey();
         this.intLevel = level_;
         this.intEXP = 100*level_;
+
     }
     public Goblin()
     {
-        this("GameDev.Goblin",1);
+        this("Goblin",1);
     }
     String MonsterName()
     {
@@ -89,7 +94,6 @@ public class Goblin extends Monster
         // Update armour with new value
         this.intArmor = tempNum;
     }
-
     private void addAttackPwr()
     {
         // Attack defaults to five
@@ -109,6 +113,19 @@ public class Goblin extends Monster
         // Else use default value
         // Update armour with new value
         this.intAttackPower = tempNum;
+    }
+    private void rollForKey()
+    {
+        // Roll to determine if the goblin is to have one of the keys
+        int tempNum = randNum.nextInt(2);
+        // Set hasKey boolean
+        if( tempNum == 0 ) { this.hasKey = false; }
+        else { this.hasKey = true; }
+    }
+    boolean CheckKey()
+    {
+        // Returns whether the mob has a key
+        return this.hasKey;
     }
 
 }

@@ -7,7 +7,7 @@ public abstract class Monster
     // Attribute Declarations
     String strName;
     int intCurrentHealth, intMaxHealth, intAttackPower, intLevel, intEXP, intArmor;
-    boolean isDead = false;
+    boolean isDead = false, hasKey, hasPotion, hasWeapon;
     Random randNum;
 
     public Monster(String name_)
@@ -30,6 +30,7 @@ public abstract class Monster
     abstract int GetEXP();
     abstract void RaiseEXP(int mobEXP_);
     abstract void UpdateLvl();
+    abstract boolean CheckKey();
 
 //    public void ChangeMonsterHealth(int intHealthChange_)
 //    {

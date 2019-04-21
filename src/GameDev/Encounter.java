@@ -1,8 +1,13 @@
 package GameDev;
 
-public class Encounter {
+public class Encounter
+{
+    public Encounter()
+    {
+        // Create a new Encounter instance
+    }
 
-    public static void Attack(Monster attacker, Monster defender)
+    public void Attack(Monster attacker, Monster defender)
     {
         // Attack method takes two entities and evaluates a single
         // attack / defence aggression

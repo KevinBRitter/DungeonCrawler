@@ -2,6 +2,9 @@ package GameDev;
 
 public class Human extends Monster {
 
+    // Attribute Declaration
+    int intKeyCount = 0;
+
     public Human(String name_)
     {
         super(name_);
@@ -11,6 +14,11 @@ public class Human extends Monster {
         this.intMaxHealth = 30;
         this.intAttackPower = 20;
     }
+    public Human()
+    {
+        this("Bandit");
+    }
+
     String MonsterName()
     {
         // Abstract method returns name
@@ -69,6 +77,20 @@ public class Human extends Monster {
         {
             this.intLevel++;
         }
+    }
+    boolean CheckKey()
+    {
+        return this.hasKey;
+    }
+    public void addKey()
+    {
+        // Add one to the value of the key count
+        this.intKeyCount++;
+    }
+    public int getKeyCount()
+    {
+        // Return the value of the key count
+        return this.intKeyCount;
     }
 
 //    public int EXPTarget() {intEXPTarget = intLevel * 100; return intEXPTarget; }
