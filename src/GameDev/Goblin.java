@@ -117,15 +117,19 @@ public class Goblin extends Monster
     private void rollForKey()
     {
         // Roll to determine if the goblin is to have one of the keys
-        int tempNum = randNum.nextInt(2);
+        int tempNum = randNum.nextInt(3);
         // Set hasKey boolean
-        if( tempNum == 0 ) { this.hasKey = false; }
-        else { this.hasKey = true; }
+        if( tempNum == 0 ) { this.hasKey = true; }
+        else { this.hasKey = false; }
     }
     boolean CheckKey()
     {
         // Returns whether the mob has a key
         return this.hasKey;
+    }
+    boolean getDead()
+    {
+        return isDead;
     }
 
 }

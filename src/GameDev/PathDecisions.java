@@ -442,7 +442,8 @@ public class PathDecisions
             }
             room1BodyCount++;
         }
-        else if(currentRoomNum == 2) {
+        else if(currentRoomNum == 2)
+        {
             if (room2BodyCount == 0) {
                 System.out.println("You enter... a dead-end. Just like the other rooms, this one has the same stone floor, \n" +
                         "stone walls, perpetually burning torches. There also seems to be a monster running at you!");

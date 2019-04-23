@@ -11,7 +11,9 @@ public class Encounter
     {
         // Attack method takes two entities and evaluates a single
         // attack / defence aggression
+        System.out.printf("\n%s attacks %s for %d damage." ,  attacker.strName , defender.strName , attacker.AttackPower() );
         defender.TakeDamage(attacker.AttackPower());
+
     }
 
     public boolean CheckHealth(Monster one, Monster two)

@@ -31,6 +31,7 @@ public abstract class Monster
     abstract void RaiseEXP(int mobEXP_);
     abstract void UpdateLvl();
     abstract boolean CheckKey();
+    abstract boolean getDead();
 
 //    public void ChangeMonsterHealth(int intHealthChange_)
 //    {

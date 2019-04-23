@@ -3,7 +3,7 @@ package GameDev;
 public class Human extends Monster {
 
     // Attribute Declaration
-    int intKeyCount = 0;
+    private int intKeyCount = 0;
 
     public Human(String name_)
     {
@@ -12,7 +12,8 @@ public class Human extends Monster {
         this.intEXP = 0;
         this.intCurrentHealth = 20;
         this.intMaxHealth = 30;
-        this.intAttackPower = 20;
+        this.intAttackPower = 5;
+        this.hasKey = false;
     }
     public Human()
     {
@@ -73,9 +74,20 @@ public class Human extends Monster {
     {
         // Abstract method checks total experience and updates player level
         int tempExp = this.intLevel * 100;
-        if(this.intEXP > tempExp)
+        if(this.intEXP >= tempExp)
         {
+            // Subtract the experience overage to increase the requirement by 100 for next level
+            this.intEXP -= this.intLevel * 100;
+
+            // Raise level by one
             this.intLevel++;
+            System.out.println("\nCongratulations, you've leveled up.  You are now level: " + this.intLevel + ".");
+            // Update the max health value
+            this.intMaxHealth = 30 + this.intLevel*10;
+            // Reset the current health to the max health
+            this.intCurrentHealth = this.intMaxHealth;
+            System.out.println("\nAs your level increases, so does your health capacity.  You now have: " +
+                    this.intMaxHealth + " health.  Use it wisely");
         }
     }
     boolean CheckKey()
@@ -86,11 +98,33 @@ public class Human extends Monster {
     {
         // Add one to the value of the key count
         this.intKeyCount++;
+        // Print messages about finding keys
+        if(this.intKeyCount == 1)
+        {
+            this.hasKey = true;
+            System.out.println("\n What's this?  You loot the corpse and find a key.  You should find a locked door.");
+        }
+        else if(this.intKeyCount == 2)
+        {
+            System.out.println("\n Hey, you found another key.  Where was that locked door?");
+        }
+        else if(this.intKeyCount == 3)
+        {
+            System.out.println("\n Well now.  That makes three keys.  Have you found a key ring yet?");
+        }
+        else if(this.intKeyCount >= 4)
+        {
+            System.out.println("\n The exit only needs three keys.  Why are you still killing monsters?");
+        }
     }
     public int getKeyCount()
     {
         // Return the value of the key count
         return this.intKeyCount;
+    }
+    boolean getDead()
+    {
+        return isDead;
     }
 
 //    public int EXPTarget() {intEXPTarget = intLevel * 100; return intEXPTarget; }
