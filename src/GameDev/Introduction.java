@@ -1,7 +1,12 @@
 package GameDev;
 
+import java.util.Scanner;
+
+import static java.lang.Thread.sleep;
+
 public class Introduction
 {
+    Scanner userIn = new Scanner(System.in);
     public void intro()
     {
         String tempMessage = "";
@@ -15,12 +20,22 @@ public class Introduction
         tempMessage += "and slowly you began to become more aware. The ground was… hard. Your hands patted around \n";
         tempMessage += "you and sure enough, they touched stone and rock, rather than the comfortable \n";
         tempMessage += "(or not so comfortable) bedding you’d gotten used to over the past few months.\n\n";
-        tempMessage += "\tHad you… fallen asleep on the road? That thought made you jolt, eyes opening wide. What view\n";
+
+        System.out.println(tempMessage);
+        try {
+            sleep(10000);
+        }catch(Exception e){}
+        tempMessage = "\tHad you… fallen asleep on the road? That thought made you jolt, eyes opening wide. What view\n";
         tempMessage += "you saw swam before you, blurry, but slowly came into focus. The light that you’d assumed was \n";
         tempMessage += "the sun through a window was instead revealed to be wavering, crackling ever so quietly – \n";
         tempMessage += "a torch? And not the British kind of torch that was really a flash light, but a piece of \n";
         tempMessage += "wood shoved into a sconce, burning for light!\n\n";
-        tempMessage += "\tWhat the hell…? Had you been kidnapped by some madman waaaay too into roleplaying? \n";
+
+        System.out.println(tempMessage);
+        try {
+            sleep(6000);
+        }catch(Exception e){}
+        tempMessage = "\tWhat the hell…? Had you been kidnapped by some madman waaaay too into roleplaying? \n";
         tempMessage += "You looked around, tempted to call out, but that seemed like a silly idea. Another thought \n";
         tempMessage += "made you glance down, before letting out a sigh of relief. You were still wearing your clothes, \n";
         tempMessage += "smelly though they seemed to be, although you weren’t sure if you trusted your nose to tell \n";
@@ -29,5 +44,8 @@ public class Introduction
         tempMessage += "hardly a secure door. \n\n\tDo you choose to open it and see what awaits you?\n.\n.\n.\n";
 
         System.out.println(tempMessage);
+
+        System.out.println("\nPress enter to continue...");
+        userIn.nextLine();
     }
 }
