@@ -64,7 +64,7 @@ public class MobWrangler {
                         System.out.println("\nA " + mob.strName + " is attacking you.");
                         System.out.println("You lunge forward and attack the " + mob.strName + ".");
 
-                        int count = 0;
+//                        int count = 0;
                         // Attack, defend loop here
                         do {
                             try {
