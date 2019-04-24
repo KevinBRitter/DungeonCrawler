@@ -26,7 +26,7 @@ public class PathDecisions
         {
 
             // You are in room 4, choices of 3, 5, or back to 7
-            System.out.println("Ok, there's options.  Should you go right or left?");
+            System.out.println("Ok, the doors.  Should you go right or left?");
             System.out.println("You can go back too, but that's a dead end right?");
             System.out.println(" 1. - Left, 2. Right, 3. Back ");
             intPlayerChoice = verifyChoice(3);
@@ -51,8 +51,7 @@ public class PathDecisions
         else if (intCurrentRoomNum == 6)
         {
             // You are in room 6, choices of back to 3
-            System.out.println("Whelp, bugger.  It seems this is a dead end. You should go back.");
-            System.out.println(" 1. - Back ");
+            System.out.println("\n 1. - Back ");
             intPlayerChoice = verifyChoice(1);
             intRoomID = 3;
         }

@@ -19,7 +19,6 @@ public class Human extends Monster {
     {
         this("Bandit");
     }
-
     String MonsterName()
     {
         // Abstract method returns name
@@ -125,6 +124,11 @@ public class Human extends Monster {
     boolean getDead()
     {
         return isDead;
+    }
+    public void healPlayer()
+    {
+        // Heal player to max health
+        this.intCurrentHealth = this.intMaxHealth;
     }
 
 //    public int EXPTarget() {intEXPTarget = intLevel * 100; return intEXPTarget; }

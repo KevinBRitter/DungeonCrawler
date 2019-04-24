@@ -18,7 +18,7 @@ public class MobWrangler {
         Goblin goblin;
         Monster mob;
         Human player, human;
-        player = new Human("Bobert");
+        player = new Human("Carl");
         Random random = new Random();
         Scanner decision = new Scanner(System.in);
 
@@ -64,13 +64,14 @@ public class MobWrangler {
                         System.out.println("\nA " + mob.strName + " is attacking you.");
                         System.out.println("You lunge forward and attack the " + mob.strName + ".");
 
-                        int count = 0;
+                        // Count variable keeps track of combat turns
+//                        int count = 0;
                         // Attack, defend loop here
                         do {
                             try {
                                 sleep(500);
                             }catch(Exception e){}
-                            System.out.println("Count " + count);
+//                            System.out.println("Count " + count);
                             // Calculate for each attack round
                             rumble.Attack(player, mob);
                             //TODO comment the fight for player via weapon class
@@ -81,16 +82,16 @@ public class MobWrangler {
                                 rumble.Attack(mob, player);
                                 // TODO comment the fight for the mob via weapon class
                             }
-                            System.out.println("Count " + count);
                             // Check if they are both still standing
                             keepFighting = rumble.CheckHealth(player, mob);
 
-                            count++;
+
+//                            count++;
                         }while(keepFighting);
                         if(mob.getDead())
                         {
                             // Monster died
-                            System.out.println("\nThe " + mob.strName + " has fallen before your relentless attack.");
+                            System.out.println("\nThe " + mob.strName + " has fallen before your relentless attack.\n");
                             player.RaiseEXP(mob.GetEXP());
                             player.UpdateLvl();
                             if(mob.CheckKey())
@@ -101,6 +102,8 @@ public class MobWrangler {
                         }
                         else if(player.getDead())
                         {
+                            System.out.println("Uh oh.  Looks like you're dead.  Tough Break.");
+                            // If player died, jump out of the loop
                             break;
                         }
                     }
@@ -108,13 +111,27 @@ public class MobWrangler {
                     {
                         // Display the intro to the sword room
                         stupidPath.roomIntro(intCurrentRoom);
+                        // You are entering the sword room.  You feel healthier.
+                        player.healPlayer();
+                        System.out.println("\nHey, didn't you have cuts and broken stuff before?");
+                        System.out.println("You feel... better... Health = " + player.intCurrentHealth);
                     }
                     intPlayerRoomChoice = stupidPath.choosePath(intPreviousRoom, intCurrentRoom);
                     if(intPlayerRoomChoice == 9)
                     {
+                        // Player is trying the exit door
                         if(player.getKeyCount()>=3)
                         {
                             exitOpen = true;
+                        }
+                        else
+                        {
+                            System.out.println("You don't have enough keys.  In fact you have " +
+                                    player.getKeyCount() + " keys.  The door needs three.");
+                            intPlayerRoomChoice = stupidPath.choosePath(intPreviousRoom, intCurrentRoom);
+                            intPreviousRoom = intCurrentRoom;
+                            intCurrentRoom = intPlayerRoomChoice;
+
                         }
                     }
                     else {
