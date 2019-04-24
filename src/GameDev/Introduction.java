@@ -45,7 +45,7 @@ public class Introduction
 
         System.out.println(tempMessage);
 
-        System.out.println("\nPress enter to continue...");
+        System.out.println("Enter y/n to continue");
         userIn.nextLine();
     }
 }

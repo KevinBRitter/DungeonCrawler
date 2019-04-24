@@ -130,6 +130,5 @@ public class Goblin extends Monster
     boolean getDead()
     {
         return isDead;
-    }
-
+    } // Return value of isDead
 }
