@@ -13,6 +13,7 @@ public class Goblin extends Monster
         addArmour();
         addAttackPwr();
         rollForKey();
+        rollForWeapon();
         this.intLevel = level_;
         this.intEXP = 100*level_;
 
@@ -127,6 +128,18 @@ public class Goblin extends Monster
         // Returns whether the mob has a key
         return this.hasKey;
     }
+
+    private void rollForWeapon()
+    {
+        int tempNum = randNum.nextInt(2);
+        if (tempNum == 0) {this.mobWeapon = new MonsterClaws();}
+        else if (tempNum == 1) {this.mobWeapon = new MonsterDagger();}
+    }
+
+    void Equip(Weapon nonexistantweapon)
+    {
+    }
+
     boolean getDead()
     {
         return isDead;
