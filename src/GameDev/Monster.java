@@ -8,7 +8,6 @@ public abstract class Monster
     String strName;
     int intCurrentHealth, intMaxHealth, intAttackPower, intLevel, intEXP, intArmor;
     boolean isDead = false, hasKey, hasPotion, hasWeapon;
-    Weapon mobWeapon;
     Random randNum;
 
     public Monster(String name_)
@@ -20,7 +19,6 @@ public abstract class Monster
     {
         this("Unknown Terror");
     }
-
 
     abstract String MonsterName();
     abstract int MaxHealth();
@@ -34,7 +32,6 @@ public abstract class Monster
     abstract void UpdateLvl();
     abstract boolean CheckKey();
     abstract boolean getDead();
-    abstract void Equip(Weapon weapon);
 
 //    public void ChangeMonsterHealth(int intHealthChange_)
 //    {
