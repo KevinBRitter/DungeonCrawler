@@ -5,6 +5,7 @@ public class Human extends Monster {
     // Attribute Declaration
     private int intKeyCount = 0;
 
+
     public Human(String name_)
     {
         super(name_);
@@ -19,7 +20,9 @@ public class Human extends Monster {
         this.intCurrentHealth = 20;
         this.intMaxHealth = 30;
         this.intAttackPower = 5;
+        rollForWeapon();
         this.hasKey = false;
+        this.mobWeapon = new Fisticuffs();
     }
     public Human()
     {
@@ -135,6 +138,22 @@ public class Human extends Monster {
     {
         // Heal player to max health
         this.intCurrentHealth = this.intMaxHealth;
+    }
+    private void rollForWeapon()
+    {
+        if(strName=="Bandit") {
+            int tempNum = randNum.nextInt(2);
+            if (tempNum == 0) {
+                this.mobWeapon = new MonsterDagger();
+            } else if (tempNum == 1) {
+                this.mobWeapon = new MonsterSword();
+            }
+        }
+    }
+
+    void Equip(Weapon newWeapon)
+    {
+        this.mobWeapon = newWeapon;
     }
 
 }
