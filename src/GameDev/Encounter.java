@@ -43,21 +43,4 @@ public class Encounter
         player.UpdateLvl();
     }
 
-    private void WeaponCheck(Monster player, Monster mob)
-    {
-        if(mob.mobWeapon.intWpnPower > player.mobWeapon.intWpnPower)
-        {
-            if (mob.mobWeapon.strName.contains("Knife"))
-            {
-                Dagger dagger = new Dagger();
-                player.Equip(dagger);
-            }
-            else if (mob.mobWeapon.strName.contains("Sword"))
-            {
-                Sword sword = new Sword();
-                player.Equip(sword);
-            }
-        }
-    }
-
 }
