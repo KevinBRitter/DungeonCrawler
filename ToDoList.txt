@@ -1,8 +1,8 @@
 X.	-- Decide on the type of game.
 X.	-- List must haves/ wants/ extras if time
-3.	Flow chart an example game
-4.	Create milestone list / progress tracker / include reducing scope checkpoints
-5.	Create peer testing calender to speed error checking
+X.	-- Flow chart an example game
+9.	Create milestone list / progress tracker / include reducing scope checkpoints
+10.	Create peer testing calender to speed error checking
 
 1.	Stephen: Dungeon Crawler, No lvl progression, one weapon, one mob, for the time being.
 2.	Kevin: 
@@ -13,3 +13,4 @@ X.	-- List must haves/ wants/ extras if time
 		Extras: 	Sound, Sell inventory or buy from npc shop, mob drops, fully random stat 10+ weapons/ mobs/ encounters, 
 				multiple armor pieces, tiered mobs, fleshed out story, high scores, executable .jar file, "infinite dungeon",
 				cheat codes (might need these for testing anyway)
+3. Kevin and Stephen

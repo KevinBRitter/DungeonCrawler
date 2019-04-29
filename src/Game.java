@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 
 public class Game extends Canvas implements Runnable {
-    private static final int width = 800, height = 600;
+    private static final int width = 700, height = 600;
 
     private Thread thread;
     private boolean running = false;
@@ -94,14 +94,14 @@ public class Game extends Canvas implements Runnable {
             this.createBufferStrategy(3);
             return;
         }
-//        Graphics g = buffStrat.getDrawGraphics();
-//
-//        g.setColor(Color.black);
-//        g.fillRect(0, 0, width, height);
-//
+        Graphics g = buffStrat.getDrawGraphics();
+
+        g.setColor(Color.black);
+        g.fillRect(0, 0, width, height);
+
 //        //handler.render(g);
-//        g.dispose();
-//        buffStrat.show();
+        g.dispose();
+        buffStrat.show();
     }
     public static void main(String [] args)
     {
